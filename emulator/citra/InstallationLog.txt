@@ -1,0 +1,45 @@
+************************************* Invoked: Sa Jan 14 18:04:27 2023
+[0] Arguments: C:\Users\justu\Downloads\citra-setup-windows.exe
+[5] Operations sanity check succeeded.
+[8520] addDownloadable "citra-windows-mingw-20230114-0bbf367.7z"
+[8520] addDownloadable "citra-windows-mingw-20230110-ad2cbe2.7z"
+[8520] addDownloadable "citra-linux-20230110-ad2cbe2.7z"
+[8520] addDownloadable "citra-linux-20230114-0bbf367.7z"
+[33015] Tmp and install directories are on the same volume. Volume mount point: "C:\\" Free space available: "186.94 GiB"
+[33015] Installation space required: "273.57 MiB" Temporary space required: "56.41 MiB" Local repository size: "0.00 Bytes"
+[34110] backup  operation: Mkdir
+[34110] 	- arguments: C:/Emulator/emulator/Citra
+[34111] Done
+[34111] perform  operation: Mkdir
+[34111] 	- arguments: C:/Emulator/emulator/Citra
+[34111] Done
+[34111] Install size: 1 components
+[46118] backup org.citra.nightly.mingw operation: Extract
+[46118] 	- arguments: installer://org.citra.nightly.mingw/1827citra-windows-mingw-20230110-ad2cbe2.7z, C:\Emulator\emulator\Citra
+[46118] Done
+[46118] perform org.citra.nightly.mingw operation: Extract
+[46118] 	- arguments: installer://org.citra.nightly.mingw/1827citra-windows-mingw-20230110-ad2cbe2.7z, C:\Emulator\emulator\Citra
+[49205] Done
+[49206] backup org.citra.nightly.mingw operation: CreateShortcut
+[49206] 	- arguments: C:\Emulator\emulator\Citra/nightly-mingw/citra-qt.exe, C:\Users\justu\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Citra/Citra Nightly.lnk, workingDirectory=C:\Emulator\emulator\Citra/nightly-mingw
+[49206] Done
+[49206] perform org.citra.nightly.mingw operation: CreateShortcut
+[49206] 	- arguments: C:\Emulator\emulator\Citra/nightly-mingw/citra-qt.exe, C:\Users\justu\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Citra/Citra Nightly.lnk
+[49252] Done
+[49253] backup org.citra.nightly.mingw operation: License
+[49253] 	- arguments:
+[49253] Done
+[49253] perform org.citra.nightly.mingw operation: License
+[49253] 	- arguments:
+[49254] Done
+[49257] Writing maintenance tool: "C:\\Emulator\\emulator\\Citra/maintenancetool.exe.new"
+[49346] Wrote permissions for maintenance tool.
+[49399] Maintenance tool restart: false.
+************************************* Invoked: Sa Jan 14 18:05:38 2023
+[0] Arguments: C:\Emulator\emulator\Citra\maintenancetool.exe
+[10] Operations sanity check succeeded.
+[8287] addDownloadable "citra-windows-mingw-20230110-ad2cbe2.7z"
+[8287] addDownloadable "citra-linux-20230110-ad2cbe2.7z"
+[8287] addDownloadable "citra-linux-20230114-0bbf367.7z"
+[8287] addDownloadable "citra-windows-mingw-20230114-0bbf367.7z"
+[9817] Created question message box "cancelInstallation": "Citra Updater Question", "Möchten Sie das Verwaltungswerkzeug beenden?"

@@ -1,0 +1,7 @@
+Reading config file C:\Emulator\emulator\snes9x.conf.
+Saving	config file	C:\Emulator\emulator\snes9x.conf
+No ROM file header found.
+Map_LoROMMap
+"ARYOL" [checksum ok] LoROM, 8Mbits, ROM, NTSC, SRAM:0Kbits, ID:____, CRC32:43B1AAD9
+Saving	config file	C:\Emulator\emulator\snes9x.conf
+Saving	config file	C:\Emulator\emulator\snes9x.conf

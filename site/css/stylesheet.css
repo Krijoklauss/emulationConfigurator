@@ -1,0 +1,69 @@
+html, body {
+    margin: auto;
+    width: calc(100% - 4rem);
+    height: 100%;
+    color: white;
+    font-family: 'Share Tech', sans-serif;
+    background-image: linear-gradient(to bottom, rgb(77, 77, 77), rgb(150, 150, 150));
+}
+
+.header {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    width: 100%;
+    height: 10rem;
+
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 6em;
+}
+
+.content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 3em;
+    padding-top: 10rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+form > div > label {
+    width: 35rem;
+}
+
+form > div > select {
+    color: white;
+    width: 15rem;
+    font-size: 0.5em;
+    background-color: rgba(0, 0, 0, 0);
+    outline: none;
+    border: none;
+}
+
+form > div > select > option {
+    background-color: black;
+}
+
+form > button {
+    width: 50rem;
+    height: 3rem;
+    font-size: 0.5em;
+}
