@@ -1,10 +1,24 @@
 html, body {
     margin: auto;
-    width: calc(100% - 4rem);
+    width: 100%
     height: 100%;
     color: white;
     font-family: 'Share Tech', sans-serif;
-    background-image: linear-gradient(to bottom, rgb(77, 77, 77), rgb(150, 150, 150));
+    background-image: url("/assets/images/tech.jpg");
+}
+
+.background_overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(75, 75, 200, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+.content_wrapper {
+    margin: auto;
+    width: calc(100% - 4rem);
 }
 
 .header {
@@ -51,7 +65,8 @@ form > div > label {
 
 form > div > select {
     color: white;
-    width: 15rem;
+    width: fit-content;
+    min-width: 20rem;
     font-size: 0.5em;
     background-color: rgba(0, 0, 0, 0);
     outline: none;
