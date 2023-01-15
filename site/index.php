@@ -82,5 +82,10 @@
                 </div>
             </div>
         </div>
+        <div class="spinner hide">
+            <div class="position_wrapper">
+                <img src="/assets/animations/spinner.gif" alt="Spinner">
+            </div>
+        </div>
     </body>
 </html>
