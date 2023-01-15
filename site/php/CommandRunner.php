@@ -3,9 +3,9 @@
 class CommandRunner {
 
     // Instanzvariablen
-    private bool $debug_enabled = false;
-    private string $emulator_path = "C:\\Emulator\\emulator\\";
-    private string $game_folder_path = "C:\\Emulator\\games\\";
+    private const debug_enabled = false;
+    private const emulator_path = "C:\\Emulator\\emulator\\";
+    private const game_folder_path = "C:\\Emulator\\games\\";
 
     // Konstruktor
     function __construct($emu, $console, $game) {
@@ -15,12 +15,12 @@ class CommandRunner {
 
     private function dolphin($emu, $console, $game): string {
         $executor = "%s%s\\%s.exe %s%s\\%s";
-        return escapeshellcmd(sprintf($executor, $this->emulator_path, $emu, $emu, $this->game_folder_path, $console, $game));
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));
     }
 
     private function visualboyadvance($emu, $console, $game): string {
         $executor = "%s%s\\%s.exe %s%s\\%s";
-        return escapeshellcmd(sprintf($executor, $this->emulator_path, $emu, $emu, $this->game_folder_path, $console, $game));
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));
     }
 
     private function runGame($cmd) {
@@ -28,7 +28,7 @@ class CommandRunner {
         exec($cmd);
 
         // Redirects back to landingpage (Dont to see debugger output)
-        if($this->debug_enabled) {
+        if(CommandRunner::debug_enabled) {
             echo $cmd;
         }
         else {
@@ -38,7 +38,7 @@ class CommandRunner {
 
     // Basic logs (Only visible in debug mode)
     private function log($str) {
-        if($this->debug_enabled) {
+        if(CommandRunner::debug_enabled) {
             echo $str;
         }
     }

@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
         <script type="module" src="global.js" defer></script>
+        <?php include "./php/LocalManager.php"; ?>
     </head>
     <body>
         <div class="background_overlay">
@@ -64,8 +65,7 @@
                             <div>
                                 <label for="game_picker">Wähle dein Spiel aus</label>
                                 <select name="game" form="runner" id="game_picker">
-                                    <option value="super_mario_land.gb">Super Mario Land</option>
-                                    <option value="Mario_Kart_-_Double_Dash!!_(USA).ciso">Mario Kart - Double Dash!!</option>
+                                    <?php new LocalManager("Games"); ?>
                                 </select>
                             </div>
                             <button type="submit">Play</button>
