@@ -41,26 +41,33 @@
                             </div>
 
                             <div>
-                                <label for="console_picker">Wähle deine Konsole</label>
-                                <select name="console" form="runner" id="console_picker">
-                                    <option disabled>Nintendo</option>
-                                    <option value="gameboy">Gameboy</option>
-                                    <option value="gameboy_advance">Gameboy Advance</option>
-                                    <option value="gameboy_color">Gameboy Color</option> 
-                                    <option value="snes">SNES</option>
-                                    <option value="n64">Nintendo 64</option>
-                                    <option value="wii">Nintendo Wii</option>
-                                    <option value="ds">Nintendo DS</option>
-                                    <option value="3ds">Nintendo 3DS</option>
-                                    <option value="gamecube">Nintendo Gamecube</option>
-                                    <option value="wii-u">Nintendo Wii U</option>
-                                    <option value="switch">Nintendo Switch</option>
-                                    <option disabled>Playstation</option>
-                                    <option value="playstation-1">Playstation</option>
-                                    <option value="playstation-2">Playstation 2</option>
-                                    <option value="playstation-3">Playstation 3</option>
-                                    <option value="psp">Playstation Portable (PSP)</option>
-                                </select>
+                                <!--
+                                    <label for="console_picker">Wähle deine Konsole</label>
+                                    <select name="console" form="runner" id="console_picker">
+                                        <option disabled>Nintendo</option>
+                                        <option value="gameboy">Gameboy</option>
+                                        <option value="gameboy_advance">Gameboy Advance</option>
+                                        <option value="gameboy_color">Gameboy Color</option> 
+                                        <option value="snes">SNES</option>
+                                        <option value="n64">Nintendo 64</option>
+                                        <option value="wii">Nintendo Wii</option>
+                                        <option value="ds">Nintendo DS</option>
+                                        <option value="3ds">Nintendo 3DS</option>
+                                        <option value="gamecube">Nintendo Gamecube</option>
+                                        <option value="wii-u">Nintendo Wii U</option>
+                                        <option value="switch">Nintendo Switch</option>
+                                        <option disabled>Playstation</option>
+                                        <option value="playstation-1">Playstation</option>
+                                        <option value="playstation-2">Playstation 2</option>
+                                        <option value="playstation-3">Playstation 3</option>
+                                        <option value="psp">Playstation Portable (PSP)</option>
+                                    </select>
+                                 -->
+
+                                <input type="checkbox" id="gameboy_picker" name="console" value="gameboy" style="visibility: hidden;" />
+                                <label for="gameboy_picker"><img id="gameboy_img" src="/assets/images/vader.jpg" /></label>
+
+
                             </div>
                             <div>
                                 <label for="game_picker">Wähle dein Spiel aus</label>
