@@ -1,10 +1,39 @@
 html, body {
     margin: auto;
-    width: 100%
+    width: 100%;
     height: 100%;
     color: white;
     font-family: 'Share Tech', sans-serif;
-    background-image: url("/assets/images/tech.jpg");
+    background-image: url("/assets/images/wallpaper.jpg");
+    background-size: contain;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.spinner {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 10rem;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(8px);
+}
+
+.position_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.position_wrapper > img {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    left: calc(50% - 10rem);
+    top: calc(50% - 10rem);
 }
 
 .background_overlay {
@@ -18,7 +47,7 @@ html, body {
 
 .content_wrapper {
     margin: auto;
-    width: calc(100% - 4rem);
+    width: fit-content;
 }
 
 .header {
@@ -27,10 +56,8 @@ html, body {
     flex-direction: row;
     justify-content: left;
     align-items: center;
-
     width: 100%;
-    height: 10rem;
-
+    height: 20rem;
     text-decoration: underline;
 }
 
@@ -44,41 +71,47 @@ h1 {
     flex-direction: column;
     width: 100%;
     font-size: 3em;
-    padding-top: 10rem;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
 }
 
 form > div {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: left;
 }
 
-form > div > label {
-    width: 35rem;
+button {
+    width: 10rem;
+    height: 2rem;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.5);
+    outline: 2px solid lightskyblue;
 }
 
-form > div > select {
+form > div:last-child {
+    height: 5rem;
+}
+
+form > div > label {
+    flex: 0 0 30rem;
+}
+
+select {
     color: white;
-    width: fit-content;
-    min-width: 20rem;
-    font-size: 0.5em;
-    background-color: rgba(0, 0, 0, 0);
+    height: 2rem;
+    background: transparent;
     outline: none;
     border: none;
+    border-bottom: 2px solid white;
+    font-size: 0.3em;
 }
 
-form > div > select > option {
+option {
     background-color: black;
-}
-
-form > button {
-    width: 50rem;
-    height: 3rem;
-    font-size: 0.5em;
 }
