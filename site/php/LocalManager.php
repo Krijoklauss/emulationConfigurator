@@ -17,11 +17,11 @@ class LocalManager {
     function loadGames(): void {
         $consoles = scandir(LocalManager::game_path);
         foreach($consoles as $console) {
-            if($console != "." && $console != "..") {
+            if($console != "." && $console != ".." && $console != ".gitignore") {
                 $console_path = LocalManager::game_path . $console . "\\";
                 $games = scandir($console_path);
                 foreach($games as $game) {
-                    if($game != "." && $game != "..") {
+                    if($game != "." && $game != ".." && $game != ".gitignore") {
                         $cleanGame = $this->cleanString($game);
                         echo "<option value='{$game}' data-console='{$console}'>{$cleanGame}</option>";
                     }

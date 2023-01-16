@@ -2,6 +2,6 @@ Reading config file C:\Emulator\emulator\snes9x\snes9x.conf.
 Saving	config file	C:\Emulator\emulator\snes9x\snes9x.conf
 No ROM file header found.
 Map_LoROMMap
-"TETRIS&Dr.MARIO" [checksum ok] LoROM, 8Mbits, ROM, PAL, SRAM:0Kbits, ID:ATFP, CRC32:523E4153
+"THE LEGEND OF ZELDA" [checksum ok] LoROM, 8Mbits, ROM+RAM+BAT, PAL, SRAM:64Kbits, ID:$__0, CRC32:04D55E12
 Saving	config file	C:\Emulator\emulator\snes9x\snes9x.conf
 Saving	config file	C:\Emulator\emulator\snes9x\snes9x.conf
