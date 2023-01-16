@@ -4,8 +4,8 @@ html, body {
     height: 100%;
     color: white;
     font-family: 'Share Tech', sans-serif;
-    background-image: url("/assets/images/tech.jpg");
-    background-size: cover;
+    background-image: url("/assets/images/wallpaper.jpg");
+    background-size: contain;
 }
 
 .hide {
@@ -76,39 +76,42 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
 }
 
 form > div {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: left;
 }
 
-form > div > label {
-    width: 35rem;
+button {
+    width: 10rem;
+    height: 2rem;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.5);
+    outline: 2px solid lightskyblue;
 }
 
-form > div > select {
+form > div:last-child {
+    height: 5rem;
+}
+
+form > div > label {
+    flex: 0 0 30rem;
+}
+
+select {
     color: white;
-    width: 25rem;
-    font-size: 0.5em;
-    background-color: rgba(0, 0, 0, 0);
+    height: 2rem;
+    background: transparent;
     outline: none;
     border: none;
+    border-bottom: 2px solid white;
+    font-size: 0.3em;
 }
 
-form > div > select > option {
+option {
     background-color: black;
-}
-
-form > button {
-    width: 50rem;
-    height: 3rem;
-    font-size: 0.5em;
-}
-
-#gameboy_img {
-    width: 10px;
-    height: 10px;
 }
