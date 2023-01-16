@@ -9,7 +9,7 @@ class LocalManager {
 
     function cleanString($str): string {
         $str = str_replace("_", " ", $str);
-        $position = strpos($str, ".");
+        $position = strpos($str, ".", strlen($str) - 5);
         $str = substr_replace($str, "", $position);
         return $str;
     }

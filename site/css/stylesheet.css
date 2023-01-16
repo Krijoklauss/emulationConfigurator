@@ -45,6 +45,25 @@ html, body {
     backdrop-filter: blur(3px);
 }
 
+.backgroundLayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundRandomizer {
+    position: absolute;
+    left: -6rem;
+    top: -6rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    backdrop-filter: blur(2px);
+    background-color: rgba(75, 75, 200, 0.1);
+}
+
 .content_wrapper {
     margin: auto;
     width: fit-content;

@@ -1,6 +1,5 @@
 @echo off
 
-cd C:\Emulator\site
 TASKLIST | FINDSTR php.exe || start /b C:\Emulator\PHP\php.exe -S localhost:80
 
 Rem This code kills all running msedge .exe processes

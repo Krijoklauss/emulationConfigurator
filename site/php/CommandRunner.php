@@ -9,18 +9,35 @@ class CommandRunner {
 
     // Konstruktor
     function __construct($emu, $console, $game) {
+        set_time_limit(0);
         $executor = $this->$emu($emu, $console, $game);
         $this->runGame($executor);
     }
 
     private function dolphin($emu, $console, $game): string {
-        $executor = "%s%s\\%s.exe %s%s\\%s";
+        $executor = "%s%s\\%s.exe \"%s%s\\%s\"";
         return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));
     }
 
     private function visualboyadvance($emu, $console, $game): string {
-        $executor = "%s%s\\%s.exe %s%s\\%s";
+        $executor = "%s%s\\%s.exe \"%s%s\\%s\"";
         return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));
+    }
+
+    private function snes9x($emu, $console, $game) {
+        $executor = "%s%s\\%s -fullscreen \"%s%s\\%s\"";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));
+    }
+
+    private function project64($emu, $console, $game) {
+        $executor = "%s%s\\%s \"%s%s\\%s\"";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
+    }
+
+    private function pcsx2($emu, $console, $game) {
+        $executor = "%s%s\\%s \"%s%s\\%s\"";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
+    
     }
 
     private function runGame($cmd) {

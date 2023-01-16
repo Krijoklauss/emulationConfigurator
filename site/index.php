@@ -8,10 +8,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
-        <script src="global.js" defer></script>
+        <script type="module" src="global.js" defer></script>
         <?php include "./php/LocalManager.php"; ?>
     </head>
     <body>
+        <div class="backgroundLayer"></div>
         <div class="background_overlay">
             <div class="content_wrapper">
                 <div class="header">
