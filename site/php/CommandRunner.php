@@ -4,8 +4,8 @@ class CommandRunner {
 
     // Instanzvariablen
     private const debug_enabled = false;
-    private const emulator_path = "C:\\Emulator\\emulator\\";
-    private const game_folder_path = "C:\\Emulator\\games\\";
+    private const emulator_path = __DIR__ . "\\..\\..\\emulator\\";
+    private const game_folder_path = __DIR__ . "\\..\\..\\games\\";
 
     // Konstruktor
     function __construct($emu, $console, $game) {

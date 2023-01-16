@@ -1,7 +1,7 @@
 <?php
 
 class LocalManager {
-    private const game_path = "C:\\Emulator\\games\\";
+    private const game_path = __DIR__ . "\\..\\..\\games\\";
     function __construct($function) {
         $function = "load" . $function;
         $this->$function();
