@@ -1,3 +1,0 @@
-2023/01/17 11:06:18.058 07508,Error,N64 System,CN64Rom::AllocateAndLoadN64Image,Failed to open C:\Emulator\site\php\..\..\games\n64\Alien vs Predator (Japan).gb
-2023/01/17 11:06:18.058 07508,Error,N64 System,CN64System::LoadFileImage,LoadN64Image failed ("C:\Emulator\site\php\..\..\games\n64\Alien vs Predator (Japan).gb")
-2023/01/17 11:06:18.058 07508,Error,User Interface,CNotificationImp::DisplayError,
