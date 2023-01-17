@@ -1,17 +1,35 @@
 
 export class Picker {
 
-    constructor(console) {
-        this.selectConsole(console);
+    constructor() {}
+
+    selectGame(gameValue) {
+        var games = document.querySelectorAll('.gameFlex');
+        for(var i = 0; i != games.length ; i++) {
+            if(games[i].dataset.game == gameValue) {
+                games[i].style.backgroundColor = "rgba(0, 128, 0, 0.4)";
+            } else {
+                games[i].style.backgroundColor = "rgba(75, 75, 200, 0.3)";
+            }
+        }
+        document.getElementById('game_picker').value = gameValue;
     }
 
     selectEmulator(consoleName) {
-
+        var picker = document.getElementById('emu_picker');
+        var options = document.querySelectorAll('#emu_picker > option');
+        for(var i = 0; i != options.length ; i++) {
+            var consoles = options[i].dataset.consoles;
+            if(consoles.includes(consoleName)) {
+                picker.value = options[i].value;
+                break;
+            }
+        }
     }
 
     selectConsole(consoleName) {
-
-        document.querySelectorAll('.consoles > div').forEach(e => {
+        var allConsoleElements = Array.from(document.getElementsByClassName('consoleFlex'));
+        allConsoleElements.forEach(e => {
             e.style.backgroundColor = "rgba(75, 75, 200, 0.3)";
         });
 
@@ -22,12 +40,10 @@ export class Picker {
                 // Set value
                 document.querySelector('#console_picker').value = e.value;
 
-                var consoles = document.querySelectorAll('.consoles > div');
-                for(var x=0; x!=consoles.length; x++) {
-                    if(consoles[i].dataset.console == consoleName) {
+                for(var x=0; x!=allConsoleElements.length; x++) {
+                    if(allConsoleElements[i].dataset.console == consoleName) {
                         // Change background color
-                        consoles[i].style.backgroundColor = "rgba(0, 128, 0, 0.4)";
-                        console.log("Green");
+                        allConsoleElements[i].style.backgroundColor = "rgba(0, 128, 0, 0.4)";
                         break;
                     }
                 }
@@ -39,17 +55,24 @@ export class Picker {
 
     chooseGames(consoleName) {
         var i = 0;
+        var self = this;
+        var gameValue = "";
         document.querySelectorAll('.games > div').forEach(e => {
+            e.addEventListener('click', function() {
+                self.selectGame(e.dataset.game);
+            });
+
             e.style.display = "none";
             var gameConsole = document.querySelectorAll('#game_picker > option')[i].dataset.console;
             if(gameConsole == consoleName) {
                 e.style.display = "flex";
-                var myGame = document.querySelectorAll('.games > div')[0];
-                document.querySelector('#game_picker').value = myGame.dataset.game;
-                myGame.style.backgroundColor = "rgba(0, 128, 0, 0.4)";
+                if(gameValue == "") {
+                    gameValue = e.dataset.game;
+                }
             }
             i++;
         });
         this.selectEmulator(consoleName);
+        this.selectGame(gameValue);
     }
 }

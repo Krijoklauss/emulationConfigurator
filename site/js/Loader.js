@@ -2,8 +2,16 @@ import { Picker } from "./Picker.js";
 
 export class Loader {
     constructor() {
-        this.picker = new Picker('gameboy');
+        this.picker = new Picker();
+        this.setEventListeners();
         this.loadContent(document.querySelectorAll('#console_picker > option'), document.querySelectorAll('#game_picker > option'));
+    }
+
+    setEventListeners() {
+        var self = this;
+        document.addEventListener('DOMContentLoaded', function() {
+            self.picker.selectConsole('gameboy');
+        });
     }
 
     loadContent(consoles, games) {

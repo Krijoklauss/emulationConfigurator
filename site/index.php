@@ -30,7 +30,7 @@
                             <div>
                                 <label for="emu_picker">Wähle deinen Emulator:</label>
                                 <select name="emulator" form="runner" id="emu_picker">
-                                    <option value="sameboy" data-consoles='["gameboy"]'>SameBoy</option>
+                                    <option value="bgb" data-consoles='["gameboy"]'>BoyGameBoyBoyBoyBoy</option>
                                     <option value="visualboyadvance" data-consoles='["gameboy_advance"]'>VisualBoyAdvance</option>
                                     <option value="snes9x" data-consoles='["snes"]'>SNES9X</option>
                                     <option value="project64" data-consoles='["n64"]'>Project 64</option>
@@ -40,7 +40,7 @@
                                     <option value="cemu" data-consoles='["wii-u"]'>Cemu</option>
                                     <option value="yuzu" data-consoles='["switch"]'>Yuzu</option>
                                     <option value="pcsx" data-consoles='["playstation-1"]'>PCSX</option>
-                                    <option value="pcsx2" data-consoles='["playstation-2"]'>PCSX2</option>
+                                    <option value="pcsx2" data-consoles='["playstation-2"]' selected>PCSX2</option>
                                     <option value="rpcs3" data-consoles='["playstation-3"]'>RPCS3</option>
                                     <option value="ppsspp" data-consoles='["psp"]'>PPSSPP</option>
                                 </select>

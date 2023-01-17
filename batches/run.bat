@@ -1,5 +1,6 @@
 @echo off
 
+cd %~dp0 
 cd "..\site"
 TASKLIST | FINDSTR php.exe || start /b ..\PHP\php.exe -S localhost:80
 
