@@ -31,7 +31,7 @@
                                 <label for="emu_picker">Wähle deinen Emulator:</label>
                                 <select name="emulator" form="runner" id="emu_picker">
                                     <option value="bgb" data-consoles='["gameboy"]'>BoyGameBoyBoyBoyBoy</option>
-                                    <option value="visualboyadvance" data-consoles='["gameboy_advance"]'>VisualBoyAdvance</option>
+                                    <option value="visualboyadvance" data-consoles='["gameboy_advance, gameboy_color"]'>VisualBoyAdvance</option>
                                     <option value="snes9x" data-consoles='["snes"]'>SNES9X</option>
                                     <option value="project64" data-consoles='["n64"]'>Project 64</option>
                                     <option value="dolphin" data-consoles='["wii", "gamecube"]'>Dolphin</option>

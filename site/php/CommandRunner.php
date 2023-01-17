@@ -44,6 +44,21 @@ class CommandRunner {
         return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
     }
 
+    private function desmume($emu, $console, $game) {
+        $executor = "%s%s\\%s.exe \"%s%s\\%s\"";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
+    }
+
+    private function citra($emu, $console, $game) {
+        $executor = "%s%s\\nightly-mingw\\%s.exe \"%s%s\\%s\"";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
+    }
+
+    private function ppsspp($emu, $console, $game) {
+        $executor = "%s%s\\%s.exe \"%s%s\\%s\" --fullscreen";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
+    }
+
     private function runGame($cmd) {
         // Executes command on windows System to run the emulator
         exec($cmd);
