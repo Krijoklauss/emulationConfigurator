@@ -37,7 +37,26 @@ class CommandRunner {
     private function pcsx2($emu, $console, $game) {
         $executor = "%s%s\\%s \"%s%s\\%s\"";
         return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
-    
+    }
+
+    private function bgb($emu, $console, $game) {
+        $executor = "%s%s\\%s.exe \"%s%s\\%s\"";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
+    }
+
+    private function desmume($emu, $console, $game) {
+        $executor = "%s%s\\%s.exe \"%s%s\\%s\"";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
+    }
+
+    private function citra($emu, $console, $game) {
+        $executor = "%s%s\\nightly-mingw\\%s.exe \"%s%s\\%s\"";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
+    }
+
+    private function ppsspp($emu, $console, $game) {
+        $executor = "%s%s\\%s.exe \"%s%s\\%s\" --fullscreen";
+        return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));  
     }
 
     private function runGame($cmd) {
@@ -69,9 +88,9 @@ if(
     gettype($_POST['emulator']) == "string" && 
     gettype($_POST['game']) == "string" &&
     gettype($_POST['console'] == "string") &&
-    strlen($_POST['emulator']) > 3 && 
-    strlen($_POST['game']) > 3 &&
-    strlen($_POST['console'] > 3)
+    strlen($_POST['emulator']) > 0 && 
+    strlen($_POST['game']) > 0 &&
+    strlen($_POST['console'] > 0)
 )
 {
     new CommandRunner($_POST['emulator'], $_POST['console'], $_POST['game']);

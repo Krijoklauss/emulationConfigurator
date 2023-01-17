@@ -6,12 +6,15 @@ All this is basically for people who do not want to waste time configuring emula
 
 # Installation
 
-- Download the code as a zip and unpack it in C:\
+- Download the code as a zip and unpack it wherever you want
 - After you've done that download PHP from https://windows.php.net/downloads/releases/php-8.2.1-nts-Win32-vs16-x64.zip and extract its content into -> C:\emulationConfigurator\PHP\
 - All the games you want to start have to be placed under C:\emulationConfigurator\games\CONSOLE
+- Last but not least you can create a shortcut to 'Emulator.exe' inside \bin\
+- If something goes wrong or hangs up just run the Kill Process inside \bin\
+
 
 # Run
-- After the installation just run the 'Run' shortcut (You can place it wherever you want, Desktop for example)
+- Just run the Emulator.exe inside \bin\
 
 # Coming soon
 - In the future we will remove all the emulators as well and provide download links to all of them
@@ -19,4 +22,4 @@ All this is basically for people who do not want to waste time configuring emula
 but we will provide a README.md file for each of them, to make the installation easier for people who do not know what they're doing exactly.
 - Currently this only supports windows, but Linux systems will be supported soon aswell
 
-Last update: 15.01.2023
+Last update: 17.01.2023

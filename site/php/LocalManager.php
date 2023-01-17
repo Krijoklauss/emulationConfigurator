@@ -21,7 +21,7 @@ class LocalManager {
                 $console_path = LocalManager::game_path . $console . "\\";
                 $games = scandir($console_path);
                 foreach($games as $game) {
-                    if($game != "." && $game != ".." && $game != ".gitignore") {
+                    if($game != "." && $game != ".." && $game != ".gitignore" && !str_ends_with($game, '.sav')) {
                         $cleanGame = $this->cleanString($game);
                         echo "<option value='{$game}' data-console='{$console}'>{$cleanGame}</option>";
                     }

@@ -1,3 +1,6 @@
-Reading config file C:\emulationConfigurator\emulator\snes9x\snes9x.conf.
-Saving	config file	C:\emulationConfigurator\emulator\snes9x\snes9x.conf
-Saving	config file	C:\emulationConfigurator\emulator\snes9x\snes9x.conf
+Reading config file C:\Emulator\emulator\snes9x\snes9x.conf.
+Saving	config file	C:\Emulator\emulator\snes9x\snes9x.conf
+No ROM file header found.
+Map_LoROMMap
+"TETRIS&Dr.MARIO" [checksum ok] LoROM, 8Mbits, ROM, PAL, SRAM:0Kbits, ID:ATFP, CRC32:523E4153
+Saving	config file	C:\Emulator\emulator\snes9x\snes9x.conf

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Emulator tool</title>
@@ -20,33 +20,35 @@
                 </div>
                 <div class="content">
                     <div class="filter">
+
+                        <div class="consoles"></div>
+                        <h2>Spiele</h2>
+                        <div class="games"></div>
+
                         <form action="./php/CommandRunner.php" method="post" id="runner">
 
                             <div>
                                 <label for="emu_picker">Wähle deinen Emulator:</label>
                                 <select name="emulator" form="runner" id="emu_picker">
-                                    <option disabled>Nintendo</option>
-                                    <option value="sameboy">SameBoy</option>
-                                    <option value="visualboyadvance">VisualBoyAdvance</option>
-                                    <option value="snes9x">SNES9X</option>
-                                    <option value="project64">Project 64</option>
-                                    <option value="dolphin">Dolphin</option>
-                                    <option value="desmume">DeSmuME</option>
-                                    <option value="citra">Citra</option>
-                                    <option value="cemu">Cemu</option>
-                                    <option value="yuzu">Yuzu</option>
-                                    <option disabled>Playstation</option>
-                                    <option value="pcsx">PCSX</option>
-                                    <option value="pcsx2">PCSX2</option>
-                                    <option value="rpcs3">RPCS3</option>
-                                    <option value="ppsspp">PPSSPP</option>
+                                    <option value="bgb" data-consoles='["gameboy"]'>BoyGameBoyBoyBoyBoy</option>
+                                    <option value="visualboyadvance" data-consoles='["gameboy_advance, gameboy_color"]'>VisualBoyAdvance</option>
+                                    <option value="snes9x" data-consoles='["snes"]'>SNES9X</option>
+                                    <option value="project64" data-consoles='["n64"]'>Project 64</option>
+                                    <option value="dolphin" data-consoles='["wii", "gamecube"]'>Dolphin</option>
+                                    <option value="desmume" data-consoles='["ds"]'>DeSmuME</option>
+                                    <option value="citra" data-consoles='["3ds"]'>Citra</option>
+                                    <option value="cemu" data-consoles='["wii-u"]'>Cemu</option>
+                                    <option value="yuzu" data-consoles='["switch"]'>Yuzu</option>
+                                    <option value="pcsx" data-consoles='["playstation-1"]'>PCSX</option>
+                                    <option value="pcsx2" data-consoles='["playstation-2"]' selected>PCSX2</option>
+                                    <option value="rpcs3" data-consoles='["playstation-3"]'>RPCS3</option>
+                                    <option value="ppsspp" data-consoles='["psp"]'>PPSSPP</option>
                                 </select>
                             </div>
 
                             <div>
                                 <label for="console_picker">Wähle deine Konsole:</label>
                                 <select name="console" form="runner" id="console_picker">
-                                    <option disabled>Nintendo</option>
                                     <option value="gameboy">Gameboy</option>
                                     <option value="gameboy_advance">Gameboy Advance</option>
                                     <option value="gameboy_color">Gameboy Color</option> 
@@ -58,7 +60,6 @@
                                     <option value="gamecube">Nintendo Gamecube</option>
                                     <option value="wii-u">Nintendo Wii U</option>
                                     <option value="switch">Nintendo Switch</option>
-                                    <option disabled>Playstation</option>
                                     <option value="playstation-1">Playstation</option>
                                     <option value="playstation-2">Playstation 2</option>
                                     <option value="playstation-3">Playstation 3</option>
