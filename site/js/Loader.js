@@ -21,11 +21,12 @@ export class Loader {
             let imageWrapper = document.createElement('div');
             imageWrapper.classList.add('consoleFlex');
             imageWrapper.dataset.console = e.value;
-            let imageElement = document.createElement('img');
-            imageElement.src = "/assets/images/" + e.value + ".png";
-            imageElement.addEventListener('click', function(){
+            imageWrapper.addEventListener('click', function(){
                 self.picker.selectConsole(e.value);
             });
+            
+            let imageElement = document.createElement('img');
+            imageElement.src = "/assets/images/" + e.value + ".png";
             imageWrapper.appendChild(imageElement);
             consoleContainer.appendChild(imageWrapper);
         });

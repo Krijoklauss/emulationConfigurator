@@ -3,15 +3,21 @@
 class CommandRunner {
 
     // Instanzvariablen
-    private const debug_enabled = false;
+    public const debug_enabled = false;
     private const emulator_path = __DIR__ . "\\..\\..\\emulator\\";
     private const game_folder_path = __DIR__ . "\\..\\..\\games\\";
 
     // Konstruktor
     function __construct($emu, $console, $game) {
-        set_time_limit(0);
-        $executor = $this->$emu($emu, $console, $game);
-        $this->runGame($executor);
+        
+    
+        try {
+            set_time_limit(0);
+            $executor = $this->$emu($emu, $console, $game);
+            $this->runGame($executor);
+        } catch (Throwable $e) {
+            header("Location: http://localhost?error=An error occured while interacting with the PHP script!");
+        }
     }
 
     private function dolphin($emu, $console, $game): string {
@@ -80,6 +86,7 @@ class CommandRunner {
     }
 }
 
+
 // Check 
 if(
     isset($_POST['emulator']) && 
@@ -87,11 +94,18 @@ if(
     isset($_POST['console']) &&
     gettype($_POST['emulator']) == "string" && 
     gettype($_POST['game']) == "string" &&
-    gettype($_POST['console'] == "string") &&
+    gettype($_POST['console']) == "string" &&
     strlen($_POST['emulator']) > 0 && 
     strlen($_POST['game']) > 0 &&
     strlen($_POST['console'] > 0)
 )
 {
-    new CommandRunner($_POST['emulator'], $_POST['console'], $_POST['game']);
+    if($_POST['emulator'] == "exit") {
+        exec('taskkill /f /im "msedge.exe"');
+        exec('taskkill /f /im "php.exe"');
+    } else {
+        new CommandRunner($_POST['emulator'], $_POST['console'], $_POST['game']);
+    }
+} else if(!CommandRunner::debug_enabled) {
+    header("Location: http://localhost");
 }
