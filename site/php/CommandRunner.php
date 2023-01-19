@@ -26,7 +26,7 @@ class CommandRunner {
     }
 
     private function visualboyadvance($emu, $console, $game): string {
-        $executor = "%s%s\\%s.exe \"%s%s\\%s\"";
+        $executor = "%s%s\\%s \"%s%s\\%s\"";
         return escapeshellcmd(sprintf($executor, CommandRunner::emulator_path, $emu, $emu, CommandRunner::game_folder_path, $console, $game));
     }
 
