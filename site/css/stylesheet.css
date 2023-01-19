@@ -99,23 +99,24 @@ h1, h2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    flex: 1 1 0px;
+    
     gap: 2rem;
-    width: 100%;
+
+    max-width: 50rem;
+    height: fit-content;
 }
 
 .consoleFlex {
     display: flex;
+    flex-basis: 20%;
     align-items: center;
     justify-content: center;
-    height: 6rem;
-    width: 6rem;
-
+    height: 5rem;
+    width: 5rem;
     border-bottom: 2px solid white;
     border-radius: 20px;
     background-color: rgba(75, 75, 200, 0.3);
     padding: 0.5rem;
-
     cursor: pointer;
 }
 

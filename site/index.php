@@ -29,7 +29,7 @@
 
                             <div>
                                 <label for="emu_picker">Wähle deinen Emulator:</label>
-                                <select name="emulator" form="runner" id="emu_picker">
+                                <select name="emulator" form="runner" id="emu_picker" required>
                                     <option value="bgb" data-consoles='["gameboy"]'>BoyGameBoyBoyBoyBoy</option>
                                     <option value="visualboyadvance" data-consoles='["gameboy_advance, gameboy_color"]'>VisualBoyAdvance</option>
                                     <option value="snes9x" data-consoles='["snes"]'>SNES9X</option>
@@ -43,12 +43,13 @@
                                     <option value="pcsx2" data-consoles='["playstation-2"]' selected>PCSX2</option>
                                     <option value="rpcs3" data-consoles='["playstation-3"]'>RPCS3</option>
                                     <option value="ppsspp" data-consoles='["psp"]'>PPSSPP</option>
+                                    <option value="exit"></option>
                                 </select>
                             </div>
 
                             <div>
                                 <label for="console_picker">Wähle deine Konsole:</label>
-                                <select name="console" form="runner" id="console_picker">
+                                <select name="console" form="runner" id="console_picker" required>
                                     <option value="gameboy">Gameboy</option>
                                     <option value="gameboy_advance">Gameboy Advance</option>
                                     <option value="gameboy_color">Gameboy Color</option> 
@@ -69,13 +70,14 @@
 
                             <div>
                                 <label for="game_picker">Wähle dein Spiel aus:</label>
-                                <select name="game" form="runner" id="game_picker">
+                                <select name="game" form="runner" id="game_picker" required>
                                     <?php new LocalManager("Games"); ?>
                                 </select>
                             </div>
 
                             <div>
                                 <button type="submit">Play</button>
+                                <button class="exitButton" type="button">Exit</button>
                             </div>
                         </form> 
                     </div>
