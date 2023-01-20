@@ -21,5 +21,3 @@ All this is basically for people who do not want to waste time configuring emula
 - You'll have to install/copy all the emulators to the correct paths (C:\emulationConfigurator\emulator\EMULATOR_NAME)
 but we will provide a README.md file for each of them, to make the installation easier for people who do not know what they're doing exactly.
 - Currently this only supports windows, but Linux systems will be supported soon aswell
-
-Last update: 17.01.2023

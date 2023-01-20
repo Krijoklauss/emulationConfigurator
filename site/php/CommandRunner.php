@@ -9,14 +9,19 @@ class CommandRunner {
 
     // Konstruktor
     function __construct($emu, $console, $game) {
-        
-    
         try {
             set_time_limit(0);
             $executor = $this->$emu($emu, $console, $game);
             $this->runGame($executor);
         } catch (Throwable $e) {
-            header("Location: http://localhost?error=An error occured while interacting with the PHP script!");
+            $code = $e->getCode();
+            $line = $e->getLine();
+            $file = $e->getFile();
+            $reason = $e->getMessage();
+            $alertOutput = "An error occurred in {$file}, in line {$line}. The error code is {$code}. The error message is: {$reason}";
+            $alertOutput = str_replace('\n', ' ', $alertOutput);
+            $alertOutput = str_replace('\t', ' ', $alertOutput);
+            header("Location: http://localhost?error={$alertOutput}");
         }
     }
 
@@ -87,7 +92,13 @@ class CommandRunner {
 }
 
 
-// Check 
+// Check
+
+if(isset($_POST['emulator']) && gettype($_POST['emulator']) == "string" && strlen($_POST['emulator']) > 0 && $_POST['emulator'] == "exit") {
+    exec('taskkill /f /im "msedge.exe"');
+    exec('taskkill /f /im "php.exe"');
+}
+
 if(
     isset($_POST['emulator']) && 
     isset($_POST['game']) && 
@@ -100,12 +111,7 @@ if(
     strlen($_POST['console'] > 0)
 )
 {
-    if($_POST['emulator'] == "exit") {
-        exec('taskkill /f /im "msedge.exe"');
-        exec('taskkill /f /im "php.exe"');
-    } else {
-        new CommandRunner($_POST['emulator'], $_POST['console'], $_POST['game']);
-    }
+    new CommandRunner($_POST['emulator'], $_POST['console'], $_POST['game']);
 } else if(!CommandRunner::debug_enabled) {
     header("Location: http://localhost");
 }
