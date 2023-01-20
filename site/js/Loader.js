@@ -26,7 +26,7 @@ export class Loader {
             });
             
             let imageElement = document.createElement('img');
-            imageElement.src = "/assets/images/" + e.value + ".png";
+            imageElement.src = "/assets/images/consoles/" + e.value + ".png";
             imageWrapper.appendChild(imageElement);
             consoleContainer.appendChild(imageWrapper);
         });
@@ -37,11 +37,17 @@ export class Loader {
             imageWrapper.classList.add('gameFlex');
             imageWrapper.dataset.game = e.value;
 
+            let headerElement = document.createElement('span');
+            headerElement.innerHTML = e.text;
+
             let imageElement = document.createElement('img');
-            imageElement.src = "assets/images/" + e.value + ".png"
+            imageElement.src = "assets/images/games/" + e.dataset.console + "/" + e.dataset.image;
             imageElement.alt = e.text;
             imageElement.dataset.game = e.value;
+
             imageWrapper.appendChild(imageElement);
+            imageWrapper.appendChild(document.createElement('br'));
+            imageWrapper.appendChild(headerElement);
             gameContainer.appendChild(imageWrapper);
         });
     }
