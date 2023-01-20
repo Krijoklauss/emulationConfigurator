@@ -30,10 +30,11 @@ class LocalManager {
         $directory = LocalManager::assets_path . "images\\games\\" . $console . "\\";
         $gameAssets = scandir($directory);
         $gameKeywords = $this->filterKeywords(explode(" ", $game));
-        $maxLength = count($gameKeywords);
-        $multiplier = 100 / $maxLength;
+        $multiplier = 100 / count($gameKeywords);
+        $maxPercentage = 0;
         $overlapCount = 0;
         $percentage = 0;
+        $myFile = "..\\..\\placeholder.png";
 
         foreach($gameAssets as $file) {
             foreach($gameKeywords as $keyword) {
@@ -41,13 +42,17 @@ class LocalManager {
                     $overlapCount += 1;
                     $percentage = $multiplier * $overlapCount;
                 }
-
-                if($percentage > 66) {
-                    return $file;
-                }
             }
+
+            if($percentage > $maxPercentage) {
+                $maxPercentage = $percentage;
+                $myFile = $file;
+            }
+
+            $percentage = 0;
+            $overlapCount = 0;
         }
-        return "..\\..\\placeholder.png";
+        return $myFile;
     }
 
     function loadGames(): void {
