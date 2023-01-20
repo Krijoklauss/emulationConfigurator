@@ -100,6 +100,19 @@ h1, h2 {
     padding-bottom: 2rem;
 }
 
+.head_space_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    text-decoration: underline;
+    gap: 1rem;
+}
+
+.head_space_wrapper > span {
+    font-size: 20px;
+}
+
 .content {
     margin: auto;
     display: flex;
@@ -139,6 +152,10 @@ h1, h2 {
 .consoleFlex > img {
     max-width: 90%;
     max-height: 90%;
+}
+
+.actions, .filter {
+    padding-bottom: 2rem;
 }
 
 .filter > ul {

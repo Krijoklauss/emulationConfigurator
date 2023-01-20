@@ -7,6 +7,7 @@ export class Loader {
         this.filter = new Filter();
         this.setEventListeners();
         this.loadContent(document.querySelectorAll('#console_picker > option'), document.querySelectorAll('#game_picker > option'));
+        this.filter.countGames();
     }
 
     setEventListeners() {
@@ -39,6 +40,7 @@ export class Loader {
             imageWrapper.classList.add('gameFlex');
             imageWrapper.dataset.game = e.value;
             imageWrapper.dataset.active = "true";
+            imageWrapper.dataset.filtered = "false";
 
             let headerElement = document.createElement('span');
             headerElement.innerHTML = e.text;

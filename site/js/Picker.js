@@ -52,6 +52,7 @@ export class Picker {
         });
         this.selectEmulator(consoleName);
         this.selectGame(gameValue);
+        this.setGameCount();
     }
 
     selectConsole(consoleName) {
@@ -83,5 +84,16 @@ export class Picker {
         }
         this.chooseGames(consoleName);
         document.querySelector('.spinner').classList.add('hide');
+    }
+
+    setGameCount() {
+        let counter = 0;
+        document.querySelectorAll('.games > div').forEach(gameElement => {
+            if(gameElement.dataset.active == "true") {
+                counter += 1; 
+            }
+        });
+        document.querySelector('#count').textContent = counter;
+        document.querySelector('#filter_box').value = '';
     }
 }

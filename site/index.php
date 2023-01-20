@@ -26,30 +26,33 @@
                         <button class="exitButton" type="button">Exit</button>
                     </div>
 
-                    <h2>Filter</h2>
+                    <h2 id="filter_head">Filter</h2>
                     <div class="filter">
                         <input id="filter_box" type="text" placeholder="Spieletitel...">
                         <ul>
                             <li>
                                 <label class="filter_label" for="region_filter_all">Alle Regionen</label>
-                                <input type="checkbox" value="all" id="region_filter_all" checked />
+                                <input class="region_filter" type="checkbox" value="all" id="region_filter_all" checked />
                             </li>
                             <li>
                                 <label class="filter_label" for="region_filter_europe">Europa</label>
-                                <input type="checkbox" value="europe" id="region_filter_europe" />
+                                <input class="region_filter" type="checkbox" value="europe" id="region_filter_europe" />
                             </li>
                             <li>
                                 <label class="filter_label" for="region_filter_asia">Asien</label>
-                                <input type="checkbox" value="asia" id="region_filter_asia" />
+                                <input class="region_filter" type="checkbox" value="asia" id="region_filter_asia" />
                             </li>
                             <li>
                                 <label class="filter_label" for="region_filter_usa">USA</label>
-                                <input type="checkbox" value="usa" id="region_filter_usa" />
+                                <input class="region_filter" type="checkbox" value="usa" id="region_filter_usa" />
                             </li>
                         </ul>
                     </div>
 
-                    <h2 class="head_spacer">Spiele</h2>
+                    <div class="head_space_wrapper">
+                        <h2 class="head_spacer">Spiele</h2>
+                        <span id="count">0</span>
+                    </div>
                     <div class="games"></div>
                     <form action="./php/CommandRunner.php" method="post" id="runner">
                         <div>
