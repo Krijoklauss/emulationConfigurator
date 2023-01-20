@@ -30,6 +30,8 @@ export class Picker {
     }
 
     selectConsole(consoleName) {
+        document.querySelector('.spinner').classList.remove('hide');
+
         var allConsoleElements = Array.from(document.getElementsByClassName('consoleFlex'));
         allConsoleElements.forEach(e => {
             e.style.backgroundColor = "rgba(75, 75, 200, 0.3)";
@@ -55,6 +57,7 @@ export class Picker {
             }
         }
         this.chooseGames(consoleName);
+        document.querySelector('.spinner').classList.add('hide');
     }
 
     chooseGames(consoleName) {

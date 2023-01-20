@@ -1,8 +1,10 @@
+import { Filter } from "./Filter.js";
 import { Picker } from "./Picker.js";
 
 export class Loader {
     constructor() {
         this.picker = new Picker();
+        this.filter = new Filter();
         this.setEventListeners();
         this.loadContent(document.querySelectorAll('#console_picker > option'), document.querySelectorAll('#game_picker > option'));
     }
