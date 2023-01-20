@@ -81,9 +81,36 @@ html, body {
     text-decoration: underline;
 }
 
+.games_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 2rem;
+}
+
 h1, h2 {
+    margin: 0;
+    padding: 1rem 0 0 0;
     font-size: 40px;
     text-decoration: underline;
+}
+
+.head_spacer {
+    padding-bottom: 2rem;
+}
+
+.head_space_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    text-decoration: underline;
+    gap: 1rem;
+}
+
+.head_space_wrapper > span {
+    font-size: 20px;
 }
 
 .content {
@@ -104,6 +131,7 @@ h1, h2 {
 
     max-width: 50rem;
     height: fit-content;
+    padding-bottom: 2rem;
 }
 
 .consoleFlex {
@@ -124,6 +152,31 @@ h1, h2 {
 .consoleFlex > img {
     max-width: 90%;
     max-height: 90%;
+}
+
+.actions, .filter {
+    padding-bottom: 2rem;
+}
+
+.filter > ul {
+    margin: 0;
+    padding: 1rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 100%;
+    gap: 1rem;
+}
+
+.filter > ul > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter_label {
+    font-size: 16px;
 }
 
 .games {
@@ -179,10 +232,6 @@ form > div {
 
 form > div {
     display: none;
-}
-
-form > div:last-child {
-    display: block;
 }
 
 button {

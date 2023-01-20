@@ -29,7 +29,35 @@ export class Picker {
         }
     }
 
+    chooseGames(consoleName) {
+        var i = 0;
+        var self = this;
+        var gameValue = "";
+        document.querySelectorAll('.games > div').forEach(e => {
+            e.addEventListener('click', function() {
+                self.selectGame(e.dataset.game);
+            });
+
+            e.dataset.active = "false";
+            e.style.display = "none";
+            var gameConsole = document.querySelectorAll('#game_picker > option')[i].dataset.console;
+            if(gameConsole == consoleName) {
+                e.style.display = "flex";
+                e.dataset.active = "true";
+                if(gameValue == "") {
+                    gameValue = e.dataset.game;
+                }
+            }
+            i++;
+        });
+        this.selectEmulator(consoleName);
+        this.selectGame(gameValue);
+        this.setGameCount();
+    }
+
     selectConsole(consoleName) {
+        document.querySelector('.spinner').classList.remove('hide');
+
         var allConsoleElements = Array.from(document.getElementsByClassName('consoleFlex'));
         allConsoleElements.forEach(e => {
             e.style.backgroundColor = "rgba(75, 75, 200, 0.3)";
@@ -55,28 +83,17 @@ export class Picker {
             }
         }
         this.chooseGames(consoleName);
+        document.querySelector('.spinner').classList.add('hide');
     }
 
-    chooseGames(consoleName) {
-        var i = 0;
-        var self = this;
-        var gameValue = "";
-        document.querySelectorAll('.games > div').forEach(e => {
-            e.addEventListener('click', function() {
-                self.selectGame(e.dataset.game);
-            });
-
-            e.style.display = "none";
-            var gameConsole = document.querySelectorAll('#game_picker > option')[i].dataset.console;
-            if(gameConsole == consoleName) {
-                e.style.display = "flex";
-                if(gameValue == "") {
-                    gameValue = e.dataset.game;
-                }
+    setGameCount() {
+        let counter = 0;
+        document.querySelectorAll('.games > div').forEach(gameElement => {
+            if(gameElement.dataset.active == "true") {
+                counter += 1; 
             }
-            i++;
         });
-        this.selectEmulator(consoleName);
-        this.selectGame(gameValue);
+        document.querySelector('#count').textContent = counter;
+        document.querySelector('#filter_box').value = '';
     }
 }

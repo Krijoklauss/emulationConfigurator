@@ -18,6 +18,13 @@ function checkError() {
 
 function main() {
 
+    // Add submit clickListener to submit button
+    let submitButton = document.querySelector('.submit_button');
+    let form = document.querySelector('form');
+    submitButton.addEventListener('click', function() {
+        form.submit();
+    });
+
     // Add ClickListener to exitButton
     document.querySelector('.exitButton').addEventListener('click', exit);
 
