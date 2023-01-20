@@ -23,7 +23,7 @@ export class Loader {
             let imageWrapper = document.createElement('div');
             imageWrapper.classList.add('consoleFlex');
             imageWrapper.dataset.console = e.value;
-            imageWrapper.addEventListener('click', function(){
+            imageWrapper.addEventListener('click', function() {
                 self.picker.selectConsole(e.value);
             });
             
@@ -38,6 +38,7 @@ export class Loader {
             let imageWrapper = document.createElement('div');
             imageWrapper.classList.add('gameFlex');
             imageWrapper.dataset.game = e.value;
+            imageWrapper.dataset.active = "true";
 
             let headerElement = document.createElement('span');
             headerElement.innerHTML = e.text;

@@ -29,6 +29,31 @@ export class Picker {
         }
     }
 
+    chooseGames(consoleName) {
+        var i = 0;
+        var self = this;
+        var gameValue = "";
+        document.querySelectorAll('.games > div').forEach(e => {
+            e.addEventListener('click', function() {
+                self.selectGame(e.dataset.game);
+            });
+
+            e.dataset.active = "false";
+            e.style.display = "none";
+            var gameConsole = document.querySelectorAll('#game_picker > option')[i].dataset.console;
+            if(gameConsole == consoleName) {
+                e.style.display = "flex";
+                e.dataset.active = "true";
+                if(gameValue == "") {
+                    gameValue = e.dataset.game;
+                }
+            }
+            i++;
+        });
+        this.selectEmulator(consoleName);
+        this.selectGame(gameValue);
+    }
+
     selectConsole(consoleName) {
         document.querySelector('.spinner').classList.remove('hide');
 
@@ -58,28 +83,5 @@ export class Picker {
         }
         this.chooseGames(consoleName);
         document.querySelector('.spinner').classList.add('hide');
-    }
-
-    chooseGames(consoleName) {
-        var i = 0;
-        var self = this;
-        var gameValue = "";
-        document.querySelectorAll('.games > div').forEach(e => {
-            e.addEventListener('click', function() {
-                self.selectGame(e.dataset.game);
-            });
-
-            e.style.display = "none";
-            var gameConsole = document.querySelectorAll('#game_picker > option')[i].dataset.console;
-            if(gameConsole == consoleName) {
-                e.style.display = "flex";
-                if(gameValue == "") {
-                    gameValue = e.dataset.game;
-                }
-            }
-            i++;
-        });
-        this.selectEmulator(consoleName);
-        this.selectGame(gameValue);
     }
 }

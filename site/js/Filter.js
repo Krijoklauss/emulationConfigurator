@@ -3,8 +3,12 @@ export class Filter {
     constructor() {
         this.lastValue = "SomeStartingValue!";
         this.filterBox = document.querySelector('#filter_box');
+        
+        let self = this;
         this.filterBox.addEventListener('keydown', (event) => {
-            this.searchFilter(event);
+            setTimeout(function() {
+                self.searchFilter(event);
+            }, 1);
         });
     }
 
@@ -13,32 +17,32 @@ export class Filter {
         let query = this.filterBox.value;
         let regex = new RegExp(/^[A-Za-z]$/gm);
 
-        console.log("Current: ", query);
-        console.log("Last value: " + this.lastValue);
-
         if (regex.test(key) || key == "Backspace") {
             let i = 0;
             let gameElements = document.querySelectorAll('.games > div');
             let gameHeader = document.querySelectorAll('.games > div > span');
             gameHeader.forEach(game => {
-                let gameName = game.innerHTML; 
-                if(
-                    query == "" ||
-                    gameName == query ||
-                    gameName.includes(query) ||
-                    gameName.toLowerCase() == query ||
-                    gameName.toLowerCase().includes(query)
-                ) 
-                {
-                    gameElements[i].style.display = "flex";
-                } else if(key == "Backspace") {
-                    if(this.lastValue == query) {
-                        gameElements[i].style.display = "flex";
+                let gameElement = gameElements[i];
+                if(gameElement.dataset.active == "true") {
+                    let gameName = game.innerHTML; 
+                    if(
+                        query == "" ||
+                        gameName == query ||
+                        gameName.includes(query) ||
+                        gameName.toLowerCase() == query ||
+                        gameName.toLowerCase().includes(query)
+                    ) 
+                    {
+                        gameElement.style.display = "flex";
+                    } else if(key == "Backspace") {
+                        if(this.lastValue == query) {
+                            gameElement.style.display = "flex";
+                        } else {
+                            gameElement.style.display = "none";   
+                        }
                     } else {
-                        gameElements[i].style.display = "none";   
+                        gameElement.style.display = "none";
                     }
-                } else {
-                    gameElements[i].style.display = "none";
                 }
                 i += 1;
             });
