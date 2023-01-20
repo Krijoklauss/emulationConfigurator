@@ -43,7 +43,7 @@ html, body {
     height: fit-content;
     min-height: 100%;
     background-color: rgba(75, 75, 200, 0.3);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
 }
 
 .backgroundLayer {
@@ -108,16 +108,17 @@ h1, h2 {
 
 .consoleFlex {
     display: flex;
-    flex-basis: 20%;
+    flex-basis: 18%;
     align-items: center;
     justify-content: center;
     height: 5rem;
     width: 5rem;
-    border-bottom: 2px solid white;
+    border: 2px solid white;
     border-radius: 20px;
     background-color: rgba(75, 75, 200, 0.3);
     padding: 0.5rem;
     cursor: pointer;
+    filter: brightness(60%);
 }
 
 .consoleFlex > img {
@@ -137,23 +138,29 @@ h1, h2 {
 
 .gameFlex {
     display: flex;
+    flex-direction: column;
+
+    text-align: center;
     align-items: center;
     justify-content: center;
-    height: 6rem;
-    width: 6rem;
 
-    border-bottom: 2px solid white;
+    height: 15rem;
+    width: 10rem;
+
+    border: 2px solid white;
     border-radius: 20px;
     background-color: rgba(75, 75, 200, 0.3);
     padding: 0.5rem;
 
     font-size: 12px;
     cursor: pointer;
+
+    filter: brightness(40%);
 }
 
 .gameFlex > img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 70%;
+    max-height: 70%;
 }
 
 
@@ -184,6 +191,7 @@ button {
     color: white;
     background-color: rgba(128, 128, 128, 0.5);
     outline: 2px solid lightskyblue;
+    cursor: pointer;
 }
 
 form > div:last-child {

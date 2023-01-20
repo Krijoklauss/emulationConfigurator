@@ -7,9 +7,11 @@ export class Picker {
         var games = document.querySelectorAll('.gameFlex');
         for(var i = 0; i != games.length ; i++) {
             if(games[i].dataset.game == gameValue) {
-                games[i].style.backgroundColor = "rgba(0, 128, 0, 0.4)";
+                games[i].style.backgroundColor = "rgba(75, 75, 200, 1)";
+                games[i].style.filter = 'brightness(100%)';
             } else {
                 games[i].style.backgroundColor = "rgba(75, 75, 200, 0.3)";
+                games[i].style.filter = 'brightness(60%)';
             }
         }
         document.getElementById('game_picker').value = gameValue;
@@ -31,6 +33,7 @@ export class Picker {
         var allConsoleElements = Array.from(document.getElementsByClassName('consoleFlex'));
         allConsoleElements.forEach(e => {
             e.style.backgroundColor = "rgba(75, 75, 200, 0.3)";
+            e.style.filter = 'brightness(60%)';
         });
 
         var consoleSelectors = document.querySelectorAll('#console_picker > option');
@@ -43,7 +46,8 @@ export class Picker {
                 for(var x=0; x!=allConsoleElements.length; x++) {
                     if(allConsoleElements[i].dataset.console == consoleName) {
                         // Change background color
-                        allConsoleElements[i].style.backgroundColor = "rgba(0, 128, 0, 0.4)";
+                        allConsoleElements[i].style.backgroundColor = "rgba(75, 75, 200, 1)";
+                        allConsoleElements[i].style.filter = 'brightness(100%)';
                         break;
                     }
                 }
