@@ -38,7 +38,7 @@ class LocalManager {
 
         foreach($gameAssets as $file) {
             foreach($gameKeywords as $keyword) {
-                if(str_contains($file, $keyword)) {
+                if(str_contains(strtolower($file), strtolower($keyword))) {
                     $overlapCount += 1;
                     $percentage = $multiplier * $overlapCount;
                 }
@@ -47,6 +47,10 @@ class LocalManager {
             if($percentage > $maxPercentage) {
                 $maxPercentage = $percentage;
                 $myFile = $file;
+            }
+
+            if($maxPercentage < 60) {
+                $myFile = "..\\..\\placeholder.png";
             }
 
             $percentage = 0;
