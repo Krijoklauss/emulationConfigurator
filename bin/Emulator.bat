@@ -1,6 +1,9 @@
 @echo off
 
 cd %~dp0
+
+start /wait Setup.bat
+
 cd "..\site"
 TASKLIST | FINDSTR php.exe || start /b ..\PHP\php.exe -S localhost:80
 
