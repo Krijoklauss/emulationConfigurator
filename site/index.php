@@ -25,7 +25,6 @@
                         <button class="submit_button" type="button">Play</button>
                         <button class="exitButton" type="button">Exit</button>
                     </div>
-
                     <h2 id="filter_head">Filter</h2>
                     <div class="filter">
                         <input id="filter_box" type="text" placeholder="Spieletitel...">
@@ -48,7 +47,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="head_space_wrapper">
                         <h2 class="head_spacer">Spiele</h2>
                         <span id="count">0</span>

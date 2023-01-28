@@ -15,13 +15,40 @@ class LocalManager {
         return $str;
     }
 
+    function cleanKeyword($keyword) {
+        $replacements = [
+            '\n' =>'',
+            '\t' =>' ',
+            ':' =>' ',
+            '\'' => '',
+            '"' => '',
+            '´' => '',
+            '`' => '',
+            ';' => '',
+            '/' => '-',
+            '\\' => '-',
+            '*' => '',
+            '?' => '',
+            '<' => '',
+            '>' => '',
+            '|' => ' ',
+            '&' => ' and ',
+            '  and  ' => ' and '
+        ];
+
+        foreach($replacements as $key => $value) {
+            $keyword = str_replace($key, $value, $keyword);
+        }
+        return $keyword;
+    }
+
     function filterKeywords($keywords): array {
         $returner = [];
         foreach($keywords as $keyword) {
             if(str_contains($keyword, "(")) {
                 break;
             }
-            array_push($returner, $keyword);
+            array_push($returner, $this->cleanKeyword($keyword));
         }
         return $returner;
     }
@@ -30,24 +57,33 @@ class LocalManager {
         $directory = LocalManager::assets_path . "images\\games\\" . $console . "\\";
         $gameAssets = scandir($directory);
         $gameKeywords = $this->filterKeywords(explode(" ", $game));
-        $maxLength = count($gameKeywords);
-        $multiplier = 100 / $maxLength;
+        $multiplier = 100 / count($gameKeywords);
+        $maxPercentage = 0;
         $overlapCount = 0;
         $percentage = 0;
+        $myFile = "..\\..\\placeholder.png";
 
         foreach($gameAssets as $file) {
             foreach($gameKeywords as $keyword) {
-                if(str_contains($file, $keyword)) {
+                if(str_contains(strtolower($file), strtolower($keyword))) {
                     $overlapCount += 1;
                     $percentage = $multiplier * $overlapCount;
                 }
-
-                if($percentage > 66) {
-                    return $file;
-                }
             }
+
+            if($percentage > $maxPercentage) {
+                $maxPercentage = $percentage;
+                $myFile = $file;
+            }
+
+            if($maxPercentage < 60) {
+                $myFile = "..\\..\\placeholder.png";
+            }
+
+            $percentage = 0;
+            $overlapCount = 0;
         }
-        return "..\\..\\placeholder.png";
+        return $myFile;
     }
 
     function loadGames(): void {
