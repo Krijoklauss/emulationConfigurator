@@ -15,13 +15,40 @@ class LocalManager {
         return $str;
     }
 
+    function cleanKeyword($keyword) {
+        $replacements = [
+            '\n' =>'',
+            '\t' =>' ',
+            ':' =>' ',
+            '\'' => '',
+            '"' => '',
+            '´' => '',
+            '`' => '',
+            ';' => '',
+            '/' => '-',
+            '\\' => '-',
+            '*' => '',
+            '?' => '',
+            '<' => '',
+            '>' => '',
+            '|' => ' ',
+            '&' => ' and ',
+            '  and  ' => ' and '
+        ];
+
+        foreach($replacements as $key => $value) {
+            $keyword = str_replace($key, $value, $keyword);
+        }
+        return $keyword;
+    }
+
     function filterKeywords($keywords): array {
         $returner = [];
         foreach($keywords as $keyword) {
             if(str_contains($keyword, "(")) {
                 break;
             }
-            array_push($returner, $keyword);
+            array_push($returner, $this->cleanKeyword($keyword));
         }
         return $returner;
     }
